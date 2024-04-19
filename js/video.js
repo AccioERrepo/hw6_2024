@@ -23,50 +23,49 @@ document.querySelector("#play").addEventListener("click", function() {
 
 	 document.querySelector("#slower").addEventListener("click", function() {
 		console.log("New Speed")
-		video.play();
-		document.getElementById("slower").innerHTML = video.playbackRate * 100 + "%"?;
+		video.playbackRate *= 0.9;
 });
 /* slow down video */
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("New Speed")
-	video.play();
-	document.getElementById("faster").innerHTML = video.playbackRate * 100 + "%"?;
+	video.playbackRate /= 0.9;
 });
 /* speed up video */
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead")
-	video.play();
-	document.getElementById("skip").innerHTML = ?;
+	video.currentTime += 10;
+
+	if (video.currentTime >= video.duration){
+		video.currentTime = 0;
+	}
 });
-/* skip ahead */
+/* skip ahead using vid.currentTime */
 
 document.querySelector("#mute").addEventListener("click", function() {
-	console.log("Skip Ahead")
+	console.log(mute)
 	video.play();
-	document.getElementById("mute").innerHTML = ?;
+	/* document.getElementById("mute").innerHTML = ?; */
 });
 /* mute */
 
-document.querySelector("#slider").addEventListener("click", function() {
-	console.log("Volume slider")
-	video.play();
-	document.getElementById("slider").innerHTML = ?;
+document.querySelector("#slider").addEventListener("change", function() {
+	console.log(video.volume)
+	video.volume = this.value / 100
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%"
 });
 /* volume slider */
 
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("Old School Class")
-	video.play();
-	document.getElementById("vintage").innerHTML = ?;
+	/* document.getElementById("vintage").innerHTML = ?; */
 });
 /* utlize old school class */
 
 
 document.querySelector("#orig").addEventListener("click", function() {
 	console.log("Original Class")
-	video.play();
-	document.getElementById("orig").innerHTML = ?;
+	/* document.getElementById("orig").innerHTML = ?; */
 });
 /* remove old school class */
