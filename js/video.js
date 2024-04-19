@@ -45,8 +45,15 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log(mute)
-	video.play();
-	/* document.getElementById("mute").innerHTML = ?; */
+	
+	if (video.muted == true){
+		document.querySelector("#mute").innerHTML = "unmute";
+		video.muted = false;
+	}
+	else {
+		document.querySelector("#mute").innerHTML = "mute";
+		video.muted = true;
+	}
 });
 /* mute */
 
@@ -59,13 +66,13 @@ document.querySelector("#slider").addEventListener("change", function() {
 
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("Old School Class")
-	/* document.getElementById("vintage").innerHTML = ?; */
+	video.classList.add("oldSchool");
 });
-/* utlize old school class */
+/* utlize old school class on the video element */
 
 
 document.querySelector("#orig").addEventListener("click", function() {
 	console.log("Original Class")
-	/* document.getElementById("orig").innerHTML = ?; */
+	video.classList.remove("oldSchool");
 });
-/* remove old school class */
+/* remove old school class */ 
